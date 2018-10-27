@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 import java.util.Date;
 
 public class LifeCycleDemo extends Activity {
@@ -21,6 +22,7 @@ public class LifeCycleDemo extends Activity {
 	private Button btnFinish;
 	private TextView txtToDo;
 	private String instanceData;
+	private String tag = "LifeCycleDemo";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,14 @@ public class LifeCycleDemo extends Activity {
 		if (savedInstanceState != null) {
 			Toast.makeText(this, "Bundle not null", Toast.LENGTH_LONG)
 			.show();
+			Log.e(tag,"Bundle not null");
 			} else {
 				Toast.makeText(this, "Bundle null", Toast.LENGTH_LONG)
 				.show();
+				Log.e(tag,"Bundle not null");
 			}
+
+
 		
 		txtMsg = (EditText) findViewById(R.id.txtMsg);
 		txtToDo = (TextView) findViewById(R.id.txtToDo);
@@ -66,6 +72,7 @@ public class LifeCycleDemo extends Activity {
 
 		Toast.makeText(this, "onCreate - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onCreate");
 	}//onCreate
 	
 	
@@ -74,6 +81,7 @@ public class LifeCycleDemo extends Activity {
 		super.onDestroy();
 		Toast.makeText(this, "onDestroy - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onDestroy");
 	}
 
 	@Override
@@ -81,6 +89,7 @@ public class LifeCycleDemo extends Activity {
 		super.onPause();
 		Toast.makeText(this, "onPause - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onPause");
 
 	}
 
@@ -89,6 +98,8 @@ public class LifeCycleDemo extends Activity {
 		super.onRestart();
 		Toast.makeText(this, "onRestart - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onRestart");
+
 	}
 
 	@Override
@@ -96,6 +107,7 @@ public class LifeCycleDemo extends Activity {
 		super.onResume();
 		Toast.makeText(this, "onResume - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onResume");
 	}
 
 	@Override
@@ -103,6 +115,7 @@ public class LifeCycleDemo extends Activity {
 		super.onStart();
 		Toast.makeText(this, "onStart - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onStart");
 	}
 
 	@Override
@@ -110,6 +123,7 @@ public class LifeCycleDemo extends Activity {
 		super.onStop();
 		Toast.makeText(this, "onStop - Demo", Toast.LENGTH_LONG)
 				.show();
+		Log.e(tag,"onStop");
 	}
 
 	/*
@@ -126,6 +140,7 @@ public class LifeCycleDemo extends Activity {
 		instanceData = savedInstanceState.getString("date");
 		Toast.makeText(this, "onRestoreInstanceState ... " + instanceData,
 				Toast.LENGTH_LONG).show();
+		Log.e(tag,"onRestoreInstanceState");
 	}
 
 	/*
@@ -147,6 +162,7 @@ public class LifeCycleDemo extends Activity {
 		savedInstanceState.putString("date", new Date().toString());
 		Toast.makeText(this, "onSaveInstanceState ...BUNDLING",
 				Toast.LENGTH_LONG).show();
+		Log.e(tag,"onSaveInstanceState");
 	} 
 	
 }
