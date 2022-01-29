@@ -40,11 +40,12 @@ public class LifeCycleDemo extends Activity {
 				Log.e(tag,"Bundle not null");
 			}
 
-
-		
+		//get references to widgets
 		txtMsg = (EditText) findViewById(R.id.txtMsg);
 		txtToDo = (TextView) findViewById(R.id.txtToDo);
 		txtMsg = (EditText) findViewById(R.id.txtMsg);
+		btnFinish = (Button) findViewById(R.id.btnFinish);
+
 		instanceData = new Date().toString();
 		
 		String msg = "Instructions:                	                 \n "
@@ -61,8 +62,7 @@ public class LifeCycleDemo extends Activity {
 		txtToDo.setText(msg);
 		txtMsg.setHint("Enter some data here");
 
-		btnFinish = (Button) findViewById(R.id.btnFinish);
-
+		//set listener on button
 		btnFinish.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {				
